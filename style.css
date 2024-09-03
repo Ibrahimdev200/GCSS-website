@@ -35,14 +35,21 @@ body {
 
 .brand-logo img {
     height: 30px;
+
 }
 
 .brand-logo-name {
+    text-align: justify;
     color:#f1f1f191;
-    font-size: 1.75rem;
-    padding: 5px;
+    font-size:1.5rem;
+    
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
+}
+
+.span{
+    background-color: #e0b200;
+    padding: 12px;
 }
 a{
 text-decoration: none;
@@ -51,7 +58,7 @@ text-decoration: none;
 span{
     color: #388e3c;
     font-weight: bolder;
-    background-color: #e0b200;
+   
     border-radius: 12px;
     padding: 12px;
 }
@@ -150,6 +157,7 @@ span{
 @media screen and (max-width: 768px) {
     .icon {
         display: flex;
+      
         position: absolute;
         top: 20px;
         right: 20px;
@@ -161,7 +169,7 @@ span{
     }
 
     .navbar{
-        background-color: #388e3c;
+        
     }
 
     .navbar-lists {
@@ -183,6 +191,8 @@ span{
 
     .navbar-lists.responsive li {
         margin: 10px 0;
+        background-color: green;
+        padding: 12px;
     }
 
     .navbar-link {
@@ -192,6 +202,10 @@ span{
 
     .navbar-link i {
         display: none;
+    }
+
+    .brand-logo-name{
+        font-size: 10px;
     }
 }
 
@@ -203,7 +217,7 @@ h3{
 .carousel-section {
     position: relative;
     width: 100%;
-    height: 93vh;
+    height: 100vh; /* Full screen height */
     overflow: hidden;
 }
 
@@ -224,12 +238,12 @@ h3{
 .main-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Ensure image covers the container while maintaining aspect ratio */
 }
 
 .quote-overlay {
     position: absolute;
-    bottom: 10%;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.5);
@@ -238,7 +252,8 @@ h3{
     border-radius: 5px;
     text-align: center;
     width: 80%;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    transition: font-size 0.3s ease; /* Smooth transition when resizing */
 }
 
 .carousel-next-btn {
@@ -259,6 +274,75 @@ h3{
     background-color: #e0b200;
 }
 
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .quote-overlay {
+        font-size: 1.25rem; /* Slightly smaller text for large screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .carousel-section {
+        height: 80vh; /* Reduce height on medium screens */
+    }
+
+    .quote-overlay {
+        font-size: 1.1rem; /* Smaller text */
+        width: 85%; /* Adjust text width */
+    }
+
+    .carousel-next-btn {
+        font-size: 0.95rem;
+        padding: 8px 16px; /* Adjust button padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-section {
+        height: 60vh; /* Further reduce height on smaller screens */
+    }
+
+    .quote-overlay {
+        font-size: 1rem;
+        width: 90%;
+    }
+
+    .carousel-next-btn {
+        font-size: 0.9rem;
+        padding: 6px 12px; /* Smaller button padding */
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-section {
+        height: 50vh; /* Further reduce height for small screens */
+    }
+
+    .quote-overlay {
+        font-size: 0.875rem;
+        width: 95%;
+    }
+
+    .carousel-next-btn {
+        font-size: 0.85rem;
+        padding: 5px 10px; /* Adjust button size and padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-section {
+        height: 45vh; /* Height adjustment for smallest screens */
+    }
+
+    .quote-overlay {
+        font-size: 0.8rem; /* Smaller font size for very small screens */
+    }
+
+    .carousel-next-btn {
+        font-size: 0.8rem; /* Further adjust button size */
+        padding: 4px 8px;
+    }
+}
 
 
 #vision {
